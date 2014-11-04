@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="Sample Category"
+            id="GWTJSNICodeGenerator.commands.category">
+      </category>
+      <command
+            name="Sample Command"
+            categoryId="GWTJSNICodeGenerator.commands.category"
+            id="GWTJSNICodeGenerator.commands.sampleCommand">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            commandId="GWTJSNICodeGenerator.commands.sampleCommand"
+            class="gwtjsnicodegenerator.handlers.SampleHandler">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="GWTJSNICodeGenerator.commands.sampleCommand"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="M1+6"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+      </key>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <menu
+               label="Sample Menu"
+               mnemonic="M"
+               id="GWTJSNICodeGenerator.menus.sampleMenu">
+            <command
+                  commandId="GWTJSNICodeGenerator.commands.sampleCommand"
+                  mnemonic="S"
+                  id="GWTJSNICodeGenerator.menus.sampleCommand">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="GWTJSNICodeGenerator.toolbars.sampleToolbar">
+            <command
+                  commandId="GWTJSNICodeGenerator.commands.sampleCommand"
+                  icon="icons/sample.gif"
+                  tooltip="Say hello world"
+                  id="GWTJSNICodeGenerator.toolbars.sampleCommand">
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
+
+</plugin>
